@@ -42,6 +42,7 @@
   },
   "homepage": "https://github.com/ACP-CODE/astro-svg-sprite#readme",
   "devDependencies": {
+    "@types/node": "^22.7.5",
     "astro": "^2.10.3",
     "typescript": "^5.2.2"
   }

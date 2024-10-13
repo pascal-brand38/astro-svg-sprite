@@ -9,7 +9,7 @@ export const fileNames: any[] = []; // 所有目录下的 SVG 文件名（含路
 
 function parseSingleDirectory(directory: string) {
 
-  fs.readdirSync(directory).forEach(filename => {
+  fs.readdirSync(directory).forEach((filename: string) => {
     if (!filename.toLowerCase().endsWith('.svg')) {
       return;
     }
