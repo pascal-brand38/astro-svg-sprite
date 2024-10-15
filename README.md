@@ -1,3 +1,13 @@
+at-scripts part of
+    https://github.com/alextim/astro-lib/tree/main/scripts
+
+
+alias tsc='npx tsc'
+alias at-scripts='node scripts/index.mjs'
+at-scripts create-pkg-name && at-scripts build && tsc -p tsconfig.build.json
+
+
+
 <div align="center">
 
 **Latest Updates! 🎉 See the [change log](./CHANGELOG.md) for details.**

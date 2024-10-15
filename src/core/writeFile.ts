@@ -1,6 +1,8 @@
 import fs from '../paths';
 
 export default function writeFile(path: any, content: any) {
+  console.log('PASCAL')
+  console.trace(path)
   if (!fs.existsSync(path)) {
     const dirname = path.substr(0, path.lastIndexOf('/'));
     if (!fs.existsSync(dirname)) {
