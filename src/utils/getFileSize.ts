@@ -1,12 +1,12 @@
 import fs from '../paths';
 /**
  * 获取 sprite.svg 文件大小
- * @param filePath 
- * @returns 
+ * @param filePath
+ * @returns
  */
 export default function getFileSize(filePath: string): Promise<number> {
   return new Promise((resolve, reject) => {
-    fs.stat(filePath, (err, stats) => {
+    fs.stat(filePath, (err: any, stats: { size: number | PromiseLike<number>; }) => {
       if (err) {
         reject(err);
         return;

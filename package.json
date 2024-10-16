@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "clear": "rm -rf ./dist",
-    "build": "npm run clear && at-scripts create-pkg-name && at-scripts build && tsc -p tsconfig.build.json"
+    "build": "npm run clear && node at-scripts/index.mjs create-pkg-name && node at-scripts/index.mjs build && tsc -p tsconfig.build.json && esbuild dist/index.js  --outdir=dist --minify --allow-overwrite"
   },
   "keywords": [
     "withastro",
@@ -42,7 +42,9 @@
   },
   "homepage": "https://github.com/ACP-CODE/astro-svg-sprite#readme",
   "devDependencies": {
+    "@types/node": "^22.7.5",
     "astro": "^2.10.3",
+    "esbuild": "^0.24.0",
     "typescript": "^5.2.2"
   }
 }

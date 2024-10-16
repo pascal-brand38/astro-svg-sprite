@@ -7,7 +7,7 @@ import printWarnInfo from './printWarnInfo';
 
 export default function printFileStats(filePath: string, outputPath: string) {
 
-  fs.stat(filePath, (err, stats) => {
+  fs.stat(filePath, (err: any, stats: { size: any; }) => {
     if (err) {
       logger.error('Could not read file information:', `${err}`);
       return;
