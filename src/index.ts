@@ -4,6 +4,7 @@ import { packageName } from './data/pkg-name';
 import { parseSvgs, generateSprite, optimizeSvgContent, writeFile, printFileStats, vitePluginSvgSprite } from './core';
 import { hasSvgFilesInDirectory, measureExecutionTime } from './utils';
 import { getEntryPath, getOutputPath } from './paths';
+import { fileURLToPath } from 'url'
 
 export interface PluginConfig {
   /**
@@ -93,7 +94,7 @@ export default function svgSprite(astroConfig: PluginConfig = {}): AstroIntegrat
       },
       'astro:config:done': async ({ config: cfg }) => {
         config = cfg;
-        filePath = `${config.publicDir.pathname}${output}/sprite.svg`;
+        filePath = `${fileURLToPath(config.publicDir)}${output}/sprite.svg`;
       },
       'astro:server:start': async () => {
         executionTime = measureExecutionTime(emitFile);
